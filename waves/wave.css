@@ -1,0 +1,50 @@
+body {
+  height: auto;
+  margin: 0;
+  background-color: #040484;
+  font: normal 13px/1.4 Consolas, monaco, monospace;
+}
+blockquote {
+  position: absolute;
+  bottom: 0;
+  width: 65%;
+  padding: 1em;
+  margin: auto;
+  color: #b1c0c7;
+  animation: fadein 1s;
+}
+h1, em {
+  color: #fff;
+}
+code {
+  padding: 0.3em 0.7em;
+  border: 0.2em solid #080808;
+  background-color: #312e2e;
+  color: #ffd5d5;
+}
+#ocean {
+  position: absolute;
+  min-height: 100%;
+  animation: fadein 2s;
+}
+#ocean > div {
+  height: 60%;
+  width: 1px;
+  position: absolute;
+  background-color: #45ceef;
+  animation: wave 3s ease-in-out infinite, pulse 20s infinite alternate;
+}
+@keyframes wave {
+  50% { height: 40%; }
+}
+@keyframes pulse {
+  0% { background-color: #45ceef; }
+  25% { background-color: #fff5a5; }
+  50% { background-color: #ffd4da; }
+  75% { background-color: #99d2e4; }
+  100% { background-color: #d8cab4; }
+}
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

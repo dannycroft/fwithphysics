@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>CSS Physics</title>
+  <link media="all" rel="stylesheet" href="wave.css" />
+</head>
+
+<body>
+  <div id="ocean"></div>
+
+  <blockquote>
+    <h1>Speed = Wavelength • Frequency</h1>
+    <p>The above equation is known as the wave equation. It states the mathematical
+      relationship between the <em>speed (v)</em> of a wave and its
+      <em>wavelength (λ)</em> and <em>frequency (f)</em>.</p>
+    <p>Using the symbols <em>v</em>, <em>λ</em>, and <em>f</em>, the equation can be rewritten
+      as:</p>
+    <code>v = f • λ</code>
+  </blockquote>
+
+  <script>
+    // Build up some waves
+    var ripple, ocean = document.getElementById("ocean"),
+      rippleStrength = 10,
+      rippleCount = Math.floor(window.innerWidth / rippleStrength),
+      wave = document.createDocumentFragment();
+
+    for (var i = 0; i < rippleCount; i++) {
+      ripple = document.createElement("div");
+      ripple.style.left = i * rippleStrength + 'px';
+      ripple.style.animationDelay = (i / 50) + 's';
+      wave.appendChild(ripple);
+    }
+    ocean.appendChild(wave);
+  </script>
+</body>
+
+</html>
